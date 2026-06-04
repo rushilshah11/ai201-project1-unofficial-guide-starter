@@ -1,9 +1,11 @@
 import gradio as gr
 
 from inspect_chunks import inspect_chunks
+from inspect_retrieval import inspect_retrieval
 from query import ask
 
 inspect_chunks()
+inspect_retrieval()
 
 
 def handle_query(question):
