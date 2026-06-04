@@ -1,0 +1,66 @@
+What are the pros and cons of majoring in Computer Science/Business Administration over just double majoring in CS and BA?
+I'm currently a freshman at USC and was hoping someone here could explain to me the pros and cons between majoring in CSBA and double majoring in CS and BA. I'm deciding between pursuing one of the two for my remaining years here and wanted to make sure I make the right decision before committing to anything.
+
+Any and all help is welcome!
+
+
+[deleted]
+•
+13y ago
+Honestly, when it comes to applying for jobs, companies will look at both these degrees and see one and the same.
+
+It comes down to whether you want to take the extra units to receive two separate degrees or if you're happy with one.
+
+Confer with your advisors to ensure you have the same amount of access to resources for Marshall and Viterbi as regular single degree students if you're going for CSBA (recruiting events, Marshall career source, etc.).
+
+Do you have an idea of what you want to pursue after you graduate?
+
+Edit: I was also contemplating doing CSBA but opted to do Business with an Info Sys concentration and SAP specialization. I wasn't interested in development or doing programming as a regular day job - now going into consulting.
+
+
+4
+u/ned_stark_reality avatar
+ned_stark_reality
+•
+13y ago
+You do have access to the resources of both schools as a CS/BA student. For instance, I did LiNC my freshman year even though technically I'm a Viterbi student.
+
+1
+u/ned_stark_reality avatar
+ned_stark_reality
+•
+13y ago
+I am a current CS/BA student and I have to say, the program is exceptional. You don't go as heavy into CS or as heavy into the BUAD program compared to if you were a pure CS or BA major but you get a really really solid background. In terms of job search, it sets you up exceptionally well if you're looking for a management position at a tech company and it looks really really good on the resume. You also don't have to take a lot of non CS classes that normal CS students do (don't have to take any languages, you don't have to take any more than 1 level of science IIRC) and you don't have to take operating systems, which I hear is a bitch of a course. You have to take a few more units than normal to graduate (I think around 140), so you'll probably be taking around 16-18 units a semester, but the business classes are a good break from the CS classes (not to say that they're easier necessarily, but they certainly use a different part of your brain).
+
+Double majoring in CS and BA would be quite a bitch, and in terms of resume, most companies just think you're double majoring with a CS/BA degree anyway. If you have any more questions on specifics ask away! BTW I'm in my senior year here so I've been in the program a while.
+
+
+2
+u/MaybeSlimShady avatar
+MaybeSlimShady
+OP
+•
+13y ago
+Thanks for the detailed response! I actually plan to get really into CS so that I have a better background for becoming a software developer but I also want to have some background in BA in case I want to take a different career path down the road and I thought CS/BA was perfect for this!
+
+I do have some other questions if you don't mind answering them: Up to this point, have you had room for some elective courses outside of CS/BA or did most of your courses involve either CS or BA? Are you given the same amount of resources and attention in both Marshall and Viterbi as a single-degree student would, or are you limited? What type of jobs and employment opportunities does a CS/BA major come with? And lastly, what were the biggest letdowns or cons you experienced with majoring in CS/BA? Thank you so much for your help!
+
+
+1
+u/ned_stark_reality avatar
+ned_stark_reality
+•
+13y ago
+So I've taken a bunch of very interesting electives outside of strict CS/BA. As a freshman there's a really cool class called "LiNC" in Marshall where you travel as a class of 40 to a foreign city for 10 or so days and meet with business executives. I went to Hong Kong and it was the most amazing experience and every other person who I've talked to felt the same way. Another cool elective I took was a class called "New Frontiers in Kinect", which was a cinema class where I got to design applications that used the Xbox Kinect. Honestly the coolest class I've ever had. Because you have the CS/BA you can get your advisor (probably steve schrader) to apply those as tech electives.
+
+In terms of resources/attention you get the perks of being in both schools. Your adviser is in Viterbi but honestly that's a lot better because I hear business advisers are not very good.
+
+As per jobs, since you are part of both Viterbi and Marshall you get access to the recruiting tools from both schools. You can go to, and are relevant at, both the general career fair and the viterbi career fair. I get emails daily from Viterbi and Marshall about internships and job opportunities from positions across the board. I think the most important part of the CS/BA program is how it massively broadens your opportunities in the workforce. I've had an internship during the school for 3 of my 4 years here and the reason why I got my foot in the door as a sophomore was because I was CS/BA. You legitimately get the best of both worlds, as a lot of the deeper CS or BA classes aren't as relevant to the real world. More specifically, if you were a Business Major, you have to take 2 or 3 accounting classes whereas if you are in the CS/BA program you only have to take one accounting class.
+
+Honestly I don't think there are any big letdowns in the program. The only qualm I have is that most business classes are 4 units and so have 4 hours of class a week. Whereas engineering classes are generally 3 units but take up 5-6 hours of class time a week so you'll be pretty busy compared to your business counterparts. I think I covered most of what I wanted to say but if I think of anything else I'll edit this response! And if you have any more questions please continue asking away! (anything to give me a reason to procrastinate hahaha)
+
+1
+cityoflostwages
+•
+13y ago
+I was not in the program so I can't speculate other than double majoring would mean more classes and more options for electives. This has been asked before though so maybe you can find something using the search function or by checking the usc forum on collegeconfidential.com

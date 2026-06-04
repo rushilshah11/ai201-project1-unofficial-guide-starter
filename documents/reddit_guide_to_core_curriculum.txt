@@ -1,0 +1,93 @@
+Small guide to the CS core curriculum at USC
+I was a spring transfer before and I know I would appreciate it if anyone actually spill the tea for me during orientation. I am graduating next semester, and have taken the majority of CS core classes besides CSCI 102-104.
+
+CSCI 170: A necessary class for the theory/algorithm part of CS, but not really useful if you do not plan on pursuing a PhD. This class is a standard offering in CS curriculums everywhere, so no complaints.
+
+CSCI 201: I took it with Miller, so I am not familiar with the situation now, but IMO the class is not designed well. It starts with basically an intro to Java, then goes into system programming (threading, sockets), and ends with web dev fundementals, with software engineering principles interleaved throughout the course. The major issue is that the coruse runs too tight with assignments covering a wide spectrum of topics, ranging from chatroom application to building a full stack website. If you have no previous web dev experience, the final few weeks will feel impossible. The class is an easy A because of its grading criteria, but I would NOT recommend it to anyone if it is not mandatory.
+
+CSCI 270: The class goes through algorithms in depth. After this class, you are good for any leetcode problem, so no more excuses start the grind!
+
+CSCI 310: The class teaches useful things that you as an average CS student will have 0% chance of understanding if you have no previous industry/project experience. The problem with USC requiring so many software engineering classes is that you need to pair them with practicum. I find many concepts taught in the class useful during my summer internship, but you can learn them on the job anyway. Especially when you have bad teammates, the class will feel like hell. Hopefully in CSCI 201 you have garnered enough web dev knowledge to be able to quickly adapt to possibly mobile dev in the class, the difference being you are graded heavily on the group project so your grade is very much on the line if you cannot finish the projects.
+
+CSCI 356: The system intro class at USC. I took it with Marco and have absolutely no complaints. He is the GOAT and IMO the most caring professor in the CS department here. Concepts taught in the class are not directly related to, say, building a website, but the underlying principles are definitely nice to know and it will help you gain insights into lower level functioning of computers. FYI, the first few weeks of the class is actually just a repeat of EE 109.
+
+CSCI 350: OS. You die in this class.
+
+CSCI 360: This class feels very theoratical, but surprising useful during interviews. Min-max, A*, decision tree, KNN are all great algorithms to learn, and some are even applicable in leetcoding.
+
+CSCI 401: Capstone, and basically a repeat of the project part of CSCI 310, but this time with an external stakeholder and an incredibly lenient grading rubric. Honestly no complaints here, since you don't need to do shit to get an A, and you are naturally motivated to code if you are on a cool project with talented team mates that you hopefully get to pick from your past years of socializing with fellow classmates.
+
+
+shortware
+•
+4y ago
+You forgot to mention the mandatory SJACS sanction every cs student will receive which is an important part of your education at usc /s
+
+34
+u/je_suis_epic avatar
+je_suis_epic
+•
+4y ago
+Thanks for this! I'm saving it.
+
+4
+u/rising_trojan avatar
+rising_trojan
+•
+4y ago
+This is so helpful, thank you!! You mentioned beginning leetcode after CSCI 270...is it alright to begin after 104, or would you recommend waiting until 270?
+
+
+2
+u/WearyAd664 avatar
+WearyAd664
+OP
+•
+4y ago
+I would say ASAP because 80% of the leetcode problems only require data structure knowledge. You need 270 for the DP stuff
+
+
+4
+u/rising_trojan avatar
+rising_trojan
+•
+4y ago
+Good to know, thank you so much!
+
+1
+Fragrant-Farmer-8970
+•
+4y ago
+Thank you for the OP! Do you have any advice for technical electives?
+
+
+1
+u/WearyAd664 avatar
+WearyAd664
+OP
+•
+4y ago
+I would say pick what you’re interested in and don’t worry about the grade. As far as I know, you can easily get a C in any CSCI elective, and that’s all that matters when you graduate. I know ppl who stick to the easiest electives to get a perfect GPA but I’ll never understand
+
+
+2
+Fragrant-Farmer-8970
+•
+4y ago
+Which of electives did you particularly enjoy? Did you take more than three? I am also spring transfer, and I feel like planning to take more than graduate requirement will spread myself pretty thin.
+
+
+1
+u/WearyAd664 avatar
+WearyAd664
+OP
+•
+4y ago
+Internetworking, Network Security, Parallel Computing, Professional C++. I liked the system classes hence the choice :)
+
+
+2
+Fragrant-Farmer-8970
+•
+4y ago
+tysm!

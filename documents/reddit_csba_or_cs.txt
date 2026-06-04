@@ -1,0 +1,133 @@
+Can’t decide between internal transfer to CSBA or just regular CS.
+I am starting the pre engineering courses this spring semester and will be meeting with a Viterbi advisor beforehand. However, I am having a hard time deciding between the two. I really want to learn an intensive amount of CS topics, and learn business as Id like to have a career in both, but the course requirements for CS/BUAD are less than the majors itself I think. Any recommendations?
+
+u/alilredapple avatar
+alilredapple
+•
+3y ago
+tbh it doesn’t rly matter that much at first so you can take your time to think ab it!! csba has to take the basic cs stuff so you can stall for more time by fulfilling those credits first
+
+a lot of ppl say that if you care ab having that technical background, you should prolly do cs and then minor in smth in Marshall (entrepreneurship seems like a popular one from what I hear?). csba isn’t super technical — even the cs minor has more requirements, so people often say this might restrict you a little bit.
+
+that being said, you can always go to grad school after to specialize more in cs or business!! I know some ppl who’ve done csba undergrad -> cs masters and also ppl who were cs undergrad -> mba, so don’t force yourself to decide now.
+
+
+7
+[deleted]
+OP
+•
+3y ago
+Yes that makes more sense. Thank you!!
+
+2
+u/Fine_Push_955 avatar
+Fine_Push_955
+•
+3y ago
+Good advice, but I will say there’s a level of one directionality regarding the credits between the two. Taking business credits won’t help your CSCI degree, so while it’s okay to take business credits after declaring CSBA, cs has steeper requirements in terms of science, math, and ee. Meaning taking business courses but then switching will put you somewhat behind. CSBAs aren’t supposed to take 103 and 170 in their first semester even if they test out of 102 meaning you can’t get ahead. Getting ahead is very important because not unlocking prereqs in a timely manner will stunt your classes and make you take longer. I even took summer classes at my local CC to make up on lost time wasted for business credits. It’s okay to wait to decide, but there’s a cost.
+
+1
+u/Cheses100 avatar
+Cheses100
+•
+3y ago
+I did CSBA and a PDP (progressive degree program) for a masters in CS. I think this is almost like a cheat code to a CS degree lol. I had fewer CS classes at once than CS majors but still learned everything I needed to and took all the important classes. Business classes aren’t super useful in my day to day work tbh but it’s nice to have that background. Plus with PDP you get a masters in just a year (just extra 5 classes) but companies see it as just a normal masters. I got into Amazon with this and the masters plus a year and a half at amazon let me get L4 (L3 is usual entry level) at google after that which usually requires more like 3 years of experience.
+
+
+9
+[deleted]
+OP
+•
+3y ago
+thank u so much for the feedback and congrats on ur success!
+
+2
+DCSwag
+•
+3y ago
+what masters courses did you take? i want to do pdp but all the classes seem really ai/ml heavy
+
+
+1
+u/Cheses100 avatar
+Cheses100
+•
+3y ago
+I took AI and machine learning, but I also took databases, algorithms and virtual reality. You can get away with not taking any AI or ML classes if you’re not interested though.
+
+
+1
+[deleted]
+Comment has been removed
+
+u/desertfox_JY avatar
+desertfox_JY
+•
+3y ago
+ngl the upper level cs courses are so much damn work, and you're most likely not gonna use any of the information you learned from them after you graduate. I also doubt that csba is gonna give you any "edge up" for swe recruiting afters, but since you're interested in business, i'd just do csba.
+
+3
+u/vodafoneIot avatar
+u/vodafoneIot
+•
+Promoted
+
+Tracking one asset is easy. Scaling across thousands isn’t. Vodafone IoT simplifies device deployments with our managed IoT connectivity designed to scale across regions and fleets.
+ Simplify your connectivity
+Simplify your connectivity
+Simplify your connectivity
+Simplify your connectivity
+iot.vodafone.com
+Learn More
+u/Fine_Push_955 avatar
+Fine_Push_955
+•
+3y ago
+CSBA is a really useless degree unless you are sure that you’re not anywhere near as competent as your CS peers. I took Econ 351/352 as CSBA but realized (not quickly enough) that BA is for people who have no other skills and must do bullshit business cosplay to feel important. Do straight CS, you’ll be happier. I was so unhappy doing CSBA cus I felt like an unproductive loser. I’m now a CS major with a math minor and much much happier, but moreover much happier with how I’m maturing and just the sheer breadth and depth of super knowledge that I’m learning. I’m also paying full, so the BA feels like I’m burning $40k of my parents money to learn nothing.
+
+
+3
+[deleted]
+OP
+•
+3y ago
+What specifically about the BA could not be useful in the workforce? I definitely want to work as a software engineer, but I’m not sure if employers would prefer more knowledge of business matters. I’m def leaning more towards CS since it’s more technical
+
+
+1
+u/Fine_Push_955 avatar
+Fine_Push_955
+•
+3y ago
+No (reputable, technical) employer is dying to hear about your business case study in “Organizational Behavior and Leadership.” Business matters are extremely self explanatory and not requisite of study. When you compare the CS major to the BUAD major, a BUAD degree’s terminal course work entails “inventory management and optimization” (counting I think 🤷‍♂️) while a CSCI degree’s terminal course work includes building your own operating system. Jack of all trades, master of none. CSBA breeds jacks, while CS creates masters.
+
+3
+u/Fine_Push_955 avatar
+Fine_Push_955
+•
+3y ago
+Literally nothing they teach is useful dude… it’s actually people cosplaying working hard. I always think to myself how no one dreams of middle management. No one comes out the womb, learns what a career is, and then thinks that their dream career (where they will spend most of their life) is sending e-mails back and forth over trivial things in a cubicle. But behold, many business majors exist. The classes don’t teach you anything, and the discipline as a whole came out of how to train already existent professionals and managers how to be better. If you want to be a manager, you have to start at the bottom. No SWE manager has a CSBA degree but rather learned a lot in college studying CS and then became a manager through being recognized as a constant do-gooder. At that point, many many companies will pay for your MBA. Learn real, concrete skills as a CS major; it’s worth it.
+
+2
+[deleted]
+OP
+•
+3y ago
+I just started BUAD 304 and I definitely see ur point. I’m likely gonna apply as internal transfer to CECS or just CS lol.
+
+1
+eternalfantasi
+•
+3y ago
+CSBA is much less work, but I think that’s a con, rather than a pro.
+
+By foregoing the pure CS degree, you’ll miss out on a lot of really interesting parts of computer science that you’ll never have a chance to learn about after you join industry. Everything past CSCI 356 is never going to be relevant in your day job, but the point of college is to learn things for learning’s sake, so I recommend you challenge yourself to complete the full CSCI major.
+
+I also found that a lot of the CSBA kids ended up bailing when the CS got too hard for them, and went full business. Don’t be like them, go all in! CSCI all the way 🤓
+
+3
+u/Green_Option3229 avatar
+Green_Option3229
+•
+3y ago
+SBC-EasyLogistics.com

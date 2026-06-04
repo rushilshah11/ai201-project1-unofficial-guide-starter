@@ -1,0 +1,61 @@
+How difficult is the CS major?
+I just want to survive with my sanity
+
+
+[deleted]
+•
+8y ago
+Like the rest of the engineering majors, it's difficult but not impossible. It all comes down to working smart, not hard. If you go to office hours, talk to CPs, and make study groups, it will be significantly easier.
+
+
+7
+u/swg3hnna avatar
+swg3hnna
+OP
+•
+8y ago
+What are CPs
+
+
+2
+u/jeremyrm avatar
+jeremyrm
+•
+8y ago
+course producers
+
+1
+[deleted]
+•
+8y ago
+Undergraduate teaching assistants who have been through the class and received at least an A-. They help design the labs and hold lots of office hours for helping students with the homeworks.
+
+1
+u/KrispyFriedChicken avatar
+KrispyFriedChicken
+•
+8y ago
+Now that I've graduated, there are a couple things I would have done differently that would 1, make my life easier, and 2, get me better grades.
+
+Go to class, pay attention, and actually THINK through all your problems, homework, and projects.
+
+Go to office hours and ask CPs (course producers) for help. They're of course amongst the smartest CS kids. They'll sit down and explain things from end-to-end for you if you really need them to. ALSO, they all have experience getting internships and can offer you advice/guidance on career oriented questions too.
+
+Make sure you go out, get lit, and have a good time. College isn't just about school, it's about the experience of meeting people and having fun too.
+
+7
+u/MickeyFan20182 avatar
+MickeyFan20182
+•
+8y ago
+It's granted that it will be hard. So I will tell you the courses to beware of (at least, imo).
+
+CS104. Probably the most notorious CS class at USC. Things that make it hard are the huge learning curve after CS103, the ridiculous amounts of hard, 15-20 hour per week programming assignments (and even harder grading!), and the weeder-course nature of it.
+
+-CS201. In general just incredibly time consuming. Didn't feel like I learned much. The final group project was also a pain in the ass (do NOT choose to make a game. Go with a web or mobile app instead, trust me).
+
+CS270 with Cote. Definitely a very hard class if you don't know how to really think about the problems you're solving or you don't have good puzzle-solving skills. Brutal homeworks and brutal exams. Prepare to ask for a lot of help in this one.
+
+CS350. Operating Systems is pretty brutal at any university really. But this one is taken later in your college career, so it's not an immediate threat. It's just got a lot of work involved in it.
+
+How do you get through these courses? Ask for help. Go to Office Hours with TA's and course producers. You will be fine so long as you take advantage of the numerous resources available to you. Good luck!
