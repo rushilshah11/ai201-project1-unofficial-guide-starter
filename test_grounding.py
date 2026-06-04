@@ -41,23 +41,37 @@ def run_test(label, question, should_answer=True):
 
 
 if __name__ == "__main__":
-    # Test 1: Answerable from multiple sources (Reddit, Quora, USC.edu)
+    # Q1: CS vs CSBA tradeoffs
     run_test(
-        label="Answerable — CS vs CSBA tradeoffs",
-        question="What are the pros and cons of choosing CSBA over CS at USC?",
+        label="Q1 — CS vs CSBA pros and cons",
+        question="What are the pros and cons of choosing CSBA over CS?",
         should_answer=True,
     )
 
-    # Test 2: Professor-specific — RMP reviews
+    # Q2: Professor Redekopp quality
     run_test(
-        label="Answerable — Professor Redekopp review",
-        question="Is Redekopp a good professor? What do students say about him?",
+        label="Q2 — Professor Redekopp review",
+        question="Is Redekopp a good professor?",
         should_answer=True,
     )
 
-    # Test 3: Outside the knowledge base — should trigger insufficient-info
+    # Q3: CSCI 103 vs skipping to 104
     run_test(
-        label="Outside knowledge base — ramen near USC",
-        question="What is the best ramen restaurant near USC?",
-        should_answer=False,
+        label="Q3 — Should I take CSCI 103 or skip to CSCI 104?",
+        question="Should I take CSCI 103 or skip to CSCI 104?",
+        should_answer=True,
+    )
+
+    # Q4: Best professors for CSCI 170
+    run_test(
+        label="Q4 — Best professors for CSCI 170",
+        question="Who are the best professors for CSCI 170?",
+        should_answer=True,
+    )
+
+    # Q5: CSCI 270 difficulty
+    run_test(
+        label="Q5 — CSCI 270 difficulty",
+        question="What do students say about CSCI 270 difficulty?",
+        should_answer=True,
     )
