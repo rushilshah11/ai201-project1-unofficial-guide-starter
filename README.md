@@ -79,6 +79,23 @@ Sources 7 and 8 (USC.edu official course pages) are structured as bulleted lists
 
 96
 
+**Sample chunks:**
+
+> **Chunk 1 — Source: `rmp_professors.txt`**
+> "CS104 is a very difficult and very time intensive class. Redekopp is probably the best teacher you can get as far as this class goes. He goes a little fast at times, but is thorough and explains things clearly and in multiple ways. Very fair grading policies and criteria. Also the most respected professor in CS. Be ready to spend hours on homework."
+
+> **Chunk 2 — Source: `reddit_cs_difficulty.txt`**
+> "Now that I've graduated, there are a couple things I would have done differently that would 1, make my life easier, and 2, get me better grades. Go to class, pay attention, and actually THINK through all your problems, homework, and projects. Don't just copy the solution, actually understand why it works. Go to office hours and talk to the CPs. Form study groups."
+
+> **Chunk 3 — Source: `reddit_pros_cons_csba.txt`**
+> "I am a current CS/BA student and I have to say, the program is exceptional. You don't go as heavy into CS or as heavy into the BUAD program compared to if you were a pure CS or BA major but you get a really really solid background. In terms of job search, it sets you up exceptionally well if you're looking for a management position at a tech company and it looks really really good on the resume."
+
+> **Chunk 4 — Source: `quora_usc_cs_difficulty.txt`**
+> "Curriculum difficulty: solid-to-challenging. Expect steep learning curves in core courses — Data Structures & Algorithms, Systems/OS, Computer Architecture, and Theory are widely considered the toughest. Grading and workload: competitive environment with substantial programming assignments, projects, and exams. Group projects are common and assess real engineering skills."
+
+> **Chunk 5 — Source: `usc_cs_course_plan.txt`**
+> "A grade of C (2.0) or better is required for each of the core computer science courses: CSCI 102L, CSCI 103L, CSCI 170, CSCI 104L and CSCI 201L. Core computer science courses with a grade of C- or below must be repeated; these courses may only be retaken once. Departmental approval is required in order to retake a course."
+
 ---
 
 ## Embedding Model
@@ -96,6 +113,50 @@ all-MiniLM-L6-v2 via sentence-transformers
 **Production tradeoff reflection:**
 
 For a production deployment the tradeoffs get more complex. General models may not understand USC specific terminology like course codes, professor nicknames, or student slang like "weedout class," so a model trained on more domain specific text would perform better. USC also has a large international student population, so multilingual support would be an important consideration. Context length matters too because the model needs to comfortably handle 1200-1500 character chunks without cutting them off and losing meaning. Latency is not ultra critical but students looking up classes during registration periods need reasonable response times.
+
+---
+
+## Retrieval Test Examples
+
+**Query 1: "What are the pros and cons of choosing CSBA over CS?"**
+
+| Rank | Source | Distance | Chunk preview |
+|------|--------|----------|---------------|
+| 1 | `reddit_csba_or_cs.txt` | 0.6408 | "I really want to learn an intensive amount of CS topics, and learn business as I'd like to have a career in both, but the course requirements for CS/BUAD are…" |
+| 2 | `reddit_csba_or_cs.txt` | 0.7972 | "CSBA is much less work, but I think that's a con, rather than a pro. By foregoing the pure CS degree, you'll miss out on a lot of really interesting parts of computer science…" |
+| 3 | `reddit_csba_or_cs.txt` | 0.8783 | "A lot of ppl say that if you care about having that technical background, you should probably do CS and then minor in something in Marshall… CSBA isn't super technical — even the CS minor has more requirements…" |
+| 4 | `reddit_pros_cons_csba.txt` | 0.9180 | "I'm currently a freshman at USC and was hoping someone could explain the pros and cons between majoring in CSBA and double majoring in CS and BA…" |
+| 5 | `reddit_csba_or_cs.txt` | 0.9823 | "If you're interested in business, I'd just do CSBA." |
+
+*Why these chunks are relevant:* All 5 chunks came from Reddit threads that debate the CS vs. CSBA decision directly. The query phrase "pros and cons" and "CSBA over CS" embedded close to posts where students use exactly that framing — weighing the tradeoff between technical depth and business breadth. Chunks 1–3 and 5 are from the same thread (`reddit_csba_or_cs.txt`), which is expected because that thread is entirely about this decision. Chunk 4 pulls from a second thread (`reddit_pros_cons_csba.txt`) that addresses the same question from a different angle, adding perspective from a student comparing CSBA to a full double major. The retrieval correctly surfaced multiple viewpoints rather than over-indexing on a single post.
+
+---
+
+**Query 2: "Is Redekopp a good professor?"**
+
+| Rank | Source | Distance | Chunk preview |
+|------|--------|----------|---------------|
+| 1 | `reddit_professor_ranking.txt` | 0.8097 | "Was Redekopp not on the list? Because he is absolutely GOAT." |
+| 2 | `rmp_professors.txt` | 0.9299 | "Prof. Redekopp is charismatic and it's easy to ask questions in class…" |
+| 3 | `rmp_professors.txt` | 0.9768 | "CS104 is a very difficult and very time intensive class. Redekopp is probably the best teacher you can get as far as this class goes…" |
+| 4 | `rmp_professors.txt` | 0.9930 | "Overall Quality: 4.4/5 based on 368 ratings. Mark Redekopp, Professor in the Engineering department at USC…" |
+| 5 | `reddit_professor_ranking.txt` | 1.1146 | "…as great humor and really excels at theoretical topics. Marco Paolieri is one of the nicest professors I have ever seen…" |
+
+*Why these chunks are relevant:* The proper noun "Redekopp" acts as a strong anchor — the embedding model clustered all top results around chunks where that name appears. Chunks 1–4 are directly about Redekopp, pulling from both his RMP profile and a Reddit ranking thread. Chunk 5 is the weakest result (distance 1.1146, above the warning threshold flagged in `inspect_retrieval.py`) and drifts toward other professor names in the same thread; it contributed little to the final answer. The retrieval correctly prioritized RMP reviews as the most information-dense source for professor quality questions.
+
+---
+
+**Query 3: "What do students say about CSCI 270 difficulty?"**
+
+| Rank | Source | Distance | Chunk preview |
+|------|--------|----------|---------------|
+| 1 | `quora_usc_cs_difficulty.txt` | 0.7802 | "For the whole semester, we just wrote three AI-related programs, and two of them are pretty easy…" |
+| 2 | `reddit_guide_to_core_curriculum.txt` | 0.8081 | "CSCI 350: OS. You die in this class. CSCI 360: This class feels very theoretical, but surprisingly useful during interviews…" |
+| 3 | `rmp_professors.txt` | 0.8737 | "Difficult class in general. Great professor who makes a complicated class pretty straightforward grading-wise…" (CSCI 170 review) |
+| 4 | `reddit_guide_to_core_curriculum.txt` | 0.8812 | "CSCI 356: The system intro class at USC. I took it with Marco and have absolutely no complaints…" |
+| 5 | `rmp_professors.txt` | 0.8863 | "Difficulty: 5.0 — CS270. Exams are insane but…" |
+
+Only chunk 5 directly addresses CSCI 270. Chunks 1–4 retrieved adjacent content about general CS difficulty and nearby course numbers (350, 360, 356), which is the failure described in the Failure Case Analysis — CSCI 270 appears in only one chunk across all 96, so the retriever padded the results with tangentially related material.
 
 ---
 
@@ -133,6 +194,33 @@ This labeling makes it straightforward for the model to identify which file each
 **How source attribution is surfaced in the response:**
 
 The model is instructed to populate the `"sources"` field in its JSON response with only the filenames it actually drew information from (e.g., `["rmp_usc_stats.txt", "reddit_cs_difficulty.txt"]`). The calling code in [app.py](app.py) reads this field and surfaces the source filenames alongside the answer to the user, so every response is accompanied by the specific documents it was grounded in.
+
+**Example system response 1** — *"What are the pros and cons of choosing CSBA over CS?"*
+
+```
+Answer:
+The pros of choosing CSBA over CS include less work and the ability to learn business
+topics in addition to CS. However, the cons include missing out on interesting parts of
+computer science, potentially restricting technical background, and the degree being
+considered less technical and less valuable by some.
+
+Retrieved from:
+• reddit_csba_or_cs.txt
+• reddit_pros_cons_csba.txt
+```
+
+**Example system response 2** — *"Is Redekopp a good professor?"*
+
+```
+Answer:
+Yes, according to the documents, Redekopp is considered a good professor. He is described
+as charismatic, able to break complex problems into simple analogies, and having fair
+grading policies. Many students have given him high ratings and would take his classes again.
+
+Retrieved from:
+• reddit_professor_ranking.txt
+• rmp_professors.txt
+```
 
 ---
 
@@ -188,6 +276,40 @@ Add at least one source that specifically covers 103 and 104 — for example, a 
 
 ---
 
+## Query Interface
+
+The interface is built with Gradio (`gr.Blocks`) and launched via `app.py`. It exposes three visible elements:
+
+| Field | Type | Description |
+|-------|------|-------------|
+| **Your question** | Text input | Text box where the user types any question about USC CS/CSBA courses, professors, or major comparisons. Placeholder: *"e.g. Is Redekopp a good professor?"* |
+| **Answer** | Text output | The grounded answer generated by `llama-3.3-70b-versatile` via Groq, drawn strictly from the retrieved documents. Displays the fallback message *"I don't have enough information on that."* when no relevant chunks are found. |
+| **Retrieved from** | Text output | Bullet-formatted list of source filenames the model cited, populated from the `"sources"` field of the JSON response. Empty when the system cannot answer. |
+
+**Sample interaction transcript:**
+
+---
+
+> **User:** Who are the best professors for CSCI 170?
+
+> **Answer:**
+> Cote is a highly recommended professor for CSCI-170, as stated in the rmp_professors.txt document.
+
+> **Retrieved from:**
+> • rmp_professors.txt
+
+---
+
+> **User:** Should I take CSCI 103 or skip to CSCI 104?
+
+> **Answer:**
+> I don't have enough information on that.
+
+> **Retrieved from:**
+> *(empty)*
+
+---
+
 ## Spec Reflection
 
 <!-- Reflect on how planning.md shaped your implementation.
@@ -225,7 +347,7 @@ The original chunking spec called for 1200–1500 character chunks (approximatel
   > Grounding requirements: Pass retrieved chunks into the LLM as context. Instruct the model to answer ONLY using the provided context, never use outside knowledge, and respond exactly with "I don't have enough information on that." if the documents are insufficient. Every answer must cite the source documents used. Return a structured JSON object: `{"answer": "...", "sources": [...]}`. Use Groq with `llama-3.3-70b-versatile` and credentials from `.env`. Include end-to-end grounding tests covering an answerable question, a professor question, and an out-of-scope question — flag any grounding failures.
 
 - _What it produced:_ `query.py` with the `ask()` function, a `_format_context()` helper labeling each chunk as `[Document N — Source: filename]`, a Groq API call with `response_format: json_object` and `temperature=0.1`, and `test_grounding.py` with labeled test cases that print sources, the generated answer, and flag grounding failures.
-- _What I changed or overrode:_ I updated the system prompt Claude generated to be more specific — the original was close to my example but I tightened it to explicitly require that every source cited in the answer must appear in the retrieved chunks by filename, ensuring the model could not reference a document it wasn't given.
+- _What I changed or overrode:_ I updated the system prompt Claude generated to be more specific — the original was close to my example but I tightened it to explicitly require that every source cited in the answer must appear in the retrieved chunks by filename.
 
 **Instance 2**
 
@@ -234,4 +356,4 @@ The original chunking spec called for 1200–1500 character chunks (approximatel
   > Add a Gradio web interface. Add `gradio>=6.9.0` to requirements if not already present. Implement an `app.py` using `gr.Blocks` with a textbox input, an Ask button, an answer output (8 lines), and a sources output (4 lines), wired to a `handle_query()` function that calls `ask()` and formats sources as a bulleted list. Wire both `btn.click` and `inp.submit` to the handler. The interface should clearly show the user question, grounded answer, and retrieved sources.
 
 - _What it produced:_ `app.py` with a `gr.Blocks` layout matching the spec — two output textboxes, both `btn.click` and `inp.submit` wired to `handle_query`, and bullet-formatted source display using `• {s}` for each source filename.
-- _What I changed or overrode:_ I added a descriptive title, a `gr.Markdown` subtitle with domain context, a placeholder on the input textbox, and `variant="primary"` on the Ask button.
+- _What I changed or overrode:_ It did a pretty good job for the interface, especially since I have never used gradio before. I added a descriptive title, a `gr.Markdown` subtitle with domain context, a placeholder on the input textbox, and `variant="primary"` on the Ask button.
