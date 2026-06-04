@@ -62,9 +62,9 @@ The university does not provide this information. The professor does not provide
 
 **Why these choices fit your documents:**
 
-I wanted one consistent strategy across all sources. My sources are either naturally grouped (RMP by professor) or naturally segmented (Reddit/Quora by paragraph/class/topic), so chunks tend to capture coherent units of meaning.
+I wanted one consistent strategy across all sources. My sources are either naturally grouped (RMP by professor) or naturally segmented (Reddit/Quora by paragraph/class/topic), so each chunk basically covers one idea or one review.
 
-For RMP specifically, reviews are already grouped by professor on the page, so a chunk of 2 reviews is essentially "what students think of Professor X" — which is exactly what you'd want to retrieve for that query. The only edge case is the tail end of one professor's reviews bleeding into the next, but the signal ratio is still heavily weighted toward the right professor, and the LLM can use the professor's name in each review to attribute opinions correctly.
+For RMP specifically, reviews are already grouped by professor on the page, so a chunk of 2 reviews is essentially "what students think of Professor X" — which is exactly what you'd want to retrieve for that query. The only edge case is the tail end of one professor's reviews bleeding into the next, but most of the chunk is still about the right professor, and the model can use the professor's name in each review to figure out who the opinion is about.
 
 For Reddit and Quora sources, posts are already broken into paragraphs or sections by class, topic, or question. Reddit paragraphs tend to be shorter and more concise than typical, closer to 5 sentences and 550 characters, so one paragraph fits comfortably within the 700 character range without needing a separate strategy.
 
@@ -73,7 +73,7 @@ A typical paragraph is estimated at around 6 sentences and 650 characters, so on
 **Update (Milestone 5):** Original chunk size was 1200–1500 characters (targeting 2 paragraphs per chunk), producing only 53 total chunks — too few to give the retriever meaningful signal diversity. Reduced to 700 characters (1 paragraph per chunk) with overlap halved proportionally to 100 characters, targeting ~100 chunks. Smaller chunks also embed more precisely against all-MiniLM-L6-v2's 256-token context window, which was silently truncating the tail of every 1400-character chunk.
 
 Known limitation:
-Sources 7 and 8 (USC.edu official course pages) are structured as bulleted lists rather than paragraphs. A single chunk from these sources may contain 8–10 course requirements or course names, each a short bullet. This means the chunk's embedding points in multiple directions simultaneously, which can hurt retrieval precision for specific course queries. This is a known tradeoff accepted in favor of keeping one consistent chunking strategy for a first project.
+Sources 7 and 8 (USC.edu official course pages) are structured as bulleted lists rather than paragraphs. A single chunk from these sources may contain 8–10 course requirements or course names, each a short bullet. This means the chunk's embedding points in multiple directions simultaneously, which can hurt retrieval precision for specific course queries. I just kept one strategy to keep things simple for this project.
 
 **Final chunk count:**
 
@@ -142,7 +142,7 @@ For a production deployment the tradeoffs get more complex. General models may n
 | 4 | `rmp_professors.txt` | 0.9930 | "Overall Quality: 4.4/5 based on 368 ratings. Mark Redekopp, Professor in the Engineering department at USC…" |
 | 5 | `reddit_professor_ranking.txt` | 1.1146 | "…as great humor and really excels at theoretical topics. Marco Paolieri is one of the nicest professors I have ever seen…" |
 
-*Why these chunks are relevant:* The proper noun "Redekopp" acts as a strong anchor — the embedding model clustered all top results around chunks where that name appears. Chunks 1–4 are directly about Redekopp, pulling from both his RMP profile and a Reddit ranking thread. Chunk 5 is the weakest result (distance 1.1146, above the warning threshold flagged in `inspect_retrieval.py`) and drifts toward other professor names in the same thread; it contributed little to the final answer. The retrieval correctly prioritized RMP reviews as the most information-dense source for professor quality questions.
+*Why these chunks are relevant:* The proper noun "Redekopp" acts as a strong anchor — the embedding model clustered all top results around chunks where that name appears. Chunks 1–4 are directly about Redekopp, pulling from both his RMP profile and a Reddit ranking thread. Chunk 5 is the weakest result (distance 1.1146, above the warning threshold flagged in `inspect_retrieval.py`) and drifts toward other professor names in the same thread; it contributed little to the final answer. RMP is where most of the professor detail lives, so it makes sense that retrieval pulled from there first.
 
 ---
 
@@ -278,7 +278,7 @@ _Should I take CSCI 103 or skip to CSCI 104?_
 
 **Root cause (tied to a specific pipeline stage):**
 
-The failure originates at the **document ingestion stage**, not retrieval or generation. The most relevant document, `reddit_guide_to_core_curriculum.txt`, explicitly states in its opening line: _"I have taken the majority of CS core classes besides CSCI 102–104."_ That means no chunk in the entire corpus discusses 103 or 104 as a course experience. At retrieval time, `all-MiniLM-L6-v2` encodes the query into an embedding that searches for semantic similarity to "CSCI 103 vs 104 skip decision" — but no chunk in ChromaDB carries that meaning. The top-5 results would have come back with high cosine distance (low similarity), and whatever was retrieved contained nothing about the topic, so the model correctly reported insufficient information rather than hallucinating.
+The problem is that the right documents were never added in the first place — it's not a retrieval or generation issue. The most relevant document, `reddit_guide_to_core_curriculum.txt`, explicitly states in its opening line: _"I have taken the majority of CS core classes besides CSCI 102–104."_ That means no chunk in the entire corpus discusses 103 or 104 as a course experience. At retrieval time, `all-MiniLM-L6-v2` encodes the query into an embedding that searches for semantic similarity to "CSCI 103 vs 104 skip decision" — but no chunk in ChromaDB carries that meaning. The top-5 results would have come back with high cosine distance (low similarity), and whatever was retrieved contained nothing about the topic, so the model correctly reported insufficient information rather than hallucinating.
 
 The ingestion stage simply never captured a source that addresses introductory course sequencing at USC.
 
@@ -329,7 +329,7 @@ The interface is built with Gradio (`gr.Blocks`) and launched via `app.py`. It e
 
 **One way the spec helped you during implementation:**
 
-The architecture diagram in planning.md decomposed the pipeline into five discrete stages with specific tools assigned to each — all-MiniLM-L6-v2 for embedding, ChromaDB as the vector store, and Groq's llama-3.3-70b-versatile for generation. This meant each stage could be implemented as its own module (`ingest.py`, `embed.py`, `retrieve.py`, `query.py`) with clear inputs and outputs, and when prompting Claude to generate each module I could hand it the relevant section of planning.md directly rather than re-explaining the architecture from scratch each time.
+The architecture diagram in planning.md broke the pipeline into five stages with a specific tool for each — all-MiniLM-L6-v2 for embedding, ChromaDB as the vector store, and Groq's llama-3.3-70b-versatile for generation. This made it easy to build each piece as its own file (`ingest.py`, `embed.py`, `retrieve.py`, `query.py`), and when I was prompting Claude to write each one I could just paste in the relevant section of planning.md instead of re-explaining everything from scratch.
 
 **One way your implementation diverged from the spec, and why:**
 
