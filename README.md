@@ -195,6 +195,18 @@ This labeling makes it straightforward for the model to identify which file each
 
 The model is instructed to populate the `"sources"` field in its JSON response with only the filenames it actually drew information from (e.g., `["rmp_usc_stats.txt", "reddit_cs_difficulty.txt"]`). The calling code in [app.py](app.py) reads this field and surfaces the source filenames alongside the answer to the user, so every response is accompanied by the specific documents it was grounded in.
 
+**Out-of-scope query example** — *"Should I take CSCI 103 or skip to CSCI 104?"*
+
+```
+Answer:
+I don't have enough information on that.
+
+Retrieved from:
+*(empty)*
+```
+
+This demonstrates the grounding fallback working as intended. No relevant chunks existed in the corpus for this question, so the model returned the exact fallback phrase specified in the system prompt rather than generating an answer from prior knowledge. The empty sources field confirms no documents were cited.
+
 **Example system response 1** — *"What are the pros and cons of choosing CSBA over CS?"*
 
 ```
