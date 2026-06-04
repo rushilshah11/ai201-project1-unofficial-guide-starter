@@ -1,0 +1,115 @@
+Computer Science and Business Administration
+The combined Bachelor of Science degree program in computer science/business administration offers qualified students the opportunity to gain an educational foundation in both areas. The degree cannot also be combined as an additional major in either computer science or business administration. The degree is administered by the Computer Science Department.
+
+General admission requirements for the undergraduate program are the same as those of the university and the USC Viterbi School of Engineering and include 3 to 5 units of mathematics and one unit of science (biology, chemistry or physics).
+
+A grade of C (2.0) or better is required for each of the core computer science courses: CSCI 102L, CSCI 103L, CSCI 170, CSCI 104L and CSCI 201L.
+
+Core computer science courses with a grade of C- or below must be repeated; these courses may only be retaken once.
+
+Departmental approval is required in order to retake a course.
+
+Students who do not satisfy the degree requirement after repeating a class will be disqualified from the program.
+
+All major degree requirements, including MATH and Basic Science, must be completed with a letter grade.
+
+A cumulative grade point average of C (2.0) is required for all courses taken at USC as well as all upper division courses applied toward the major, regardless of the department in which the courses are taken. Candidates must complete general education requirements; see the General Education Program.
+
+The minimum requirement for the degree is 128 units.
+
+Note: This page is updated to the most recent catalogue year, students who start the program before this year should check their STARS report for their requirements
+
+
+Composition/Writing Requirements (8 Units)
+WRIT 150 - Writing and Critical Reasoning–Thematic Approaches (4)
+WRIT 340 - Advanced Writing* (4)
+* WRIT 340 Advanced Writing (Communication for Engineers) is strongly recommended for CSBA majors.
+
+
+General Education (24 Units)
+Visit USC Dornsife's General Education website for more information: http://dornsife.usc.edu/2015ge/2015ge-requirements/
+
+Pre-Major Requirements (22 Units)
+Engineering (2 units)
+
+ENGR 102 - Engineering Freshman Academy (2)
+Mathematics (8 units)
+
+MATH 125g - Calculus I (4) **
+MATH 126 - Calculus II (4)
+or
+MATH 129 - Calculus II for Engineers and Scientists (4)
+Statistics and Probability (4 units)
+
+BUAD 310g - Applied Business Statistics (4)
+or
+BUAD 312g - Statistics and Data Science for Business (4)
+or
+EE 364 - Introduction to Probability and Statistics for Electrical Engineering and Computer Science (4)
+or
+MATH 407 - Probability Theory (4)
+Linear Algebra (4 units)
+
+MATH 225 - Linear Algebra and Linear Differential Equations (4)
+or
+MATH 235 - Linear Algebra and Applications (4)
+or
+EE 141L - Applied Linear Algebra for Engineering (4)
+Basic Science (4 units)
+
+BISC 120Lg - General Biology: Organismal Biology and Evolution (4) or
+BISC 121Lg - Advanced General Biology: Organismal Biology and Evolution (4) or
+CHEM 105aLg - General Chemistry (4) or
+CHEM 115aLg - Advanced General Chemistry (4) or
+PHYS 151Lg - Fundamentals of Physics I: Mechanics and Thermodynamics (4) or
+PHYS 161Lg - Advanced Principles of Physics I (4)
+
+Major Requirements (66 Units)
+Computer Science Requirements (30 units)
+
+CSCI 102L - Introduction to Programming (2)
+CSCI 103L - Object Oriented Programming (4)
+CSCI 104L - Data Structures (4)
+CSCI 170 - Discrete Methods in Computer Science (4)
+CSCI 201L - Principles of Software Development (4)
+CSCI 270 - Introduction to Algorithms and Theory of Computing (4)
+CSCI 310 - Software Engineering (4)
+CSCI 401 - Capstone: Design and Construction of Large Software Systems (4)
+or
+CSCI 404 - Capstone: Creating Your High-Tech Startup (4)
+Business Requirements (36 units)
+
+ACCT 410x - Foundations of Accounting (4)
+BUAD 302 - Communication Strategy in Business (4)
+BUAD 304 - Organizational Behavior and Leadership (4)
+BUAD 306 - Business Finance (4)
+BUAD 307 - Marketing Fundamentals (4)
+BUAD 311 - Operations Management (4) 
+or
+BUAD 313 - Advanced Operations Management and Analytics (4)
+BUAD 497 - Strategic Management (4)
+ECON 351x - Microeconomics for Business (4)
+ECON 352x - Macroeconomics for Business (4)
+
+Technical Electives (8 units)
+Note: The below requirements apply to students entering Fall 2025 or later. Students entered before Fall 2025 may consult their academic advisor with any inquiries regarding their requirements.  
+
+Computer Science Electives
+
+Take at least one 4-unit 300- or 400-level CSCI course.
+
+Courses used as part of your core major requirements cannot be double counted as a technical elective.
+All technical elective courses must be upper division (300-level and above). Lower division coursework will not be approved for technical elective credit.
+Business Electives
+
+Take at least 4-units of 300- or 400-level courses offered by the Marshall School, specifically with a prefix of:
+
+ACCT
+BAEP
+BUCO
+BUAD
+DSO
+FBE
+MKT
+MOR
+RISK

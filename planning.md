@@ -11,7 +11,7 @@
 
 <!-- What domain did you choose? Why is this knowledge valuable and hard to find through official channels? -->
 
-I chose course and professor reviews for Computer Science at the University of Southern California. This knowledge is valuable to computer science students because it gives context to the difficulty of the class and professor preparation. There are times where one professor can make the class more difficult than another professor through difficult exams, lack of office hours, or simply not doing a better job at making complex topics digestible. 
+I chose course and professor reviews for Computer Science and Computer Science and Business Administration at the University of Southern California. This knowledge is valuable to computer science students because it gives context to the difficulty of the class and professor preparation. There are times where one professor can make the class more difficult than another professor through difficult exams, lack of office hours, or simply not doing a better job at making complex topics digestible. 
 
 This information is valuable for a student who is really interested in a class topic, wants to prepare their course plan ahead of time, or wants raw insight from previous students to be prepared for a class. It also helps with picking a major, switching majors, or choosing between very similar majors. 
 
@@ -48,24 +48,26 @@ The university does not provide this information. The professor does not provide
 
 **Chunk size:** 
 
-1200 - 1500 Characters
+700 Characters
 
 **Overlap:**
 
-200 - 250 Characters
+100 Characters
 
 **Reasoning:**
 
 I wanted one consistent strategy across all sources. My sources are either naturally grouped (RMP by professor) or naturally segmented (Reddit/Quora by paragraph/class/topic), so chunks tend to capture coherent units of meaning.
 
-For RMP specifically, reviews are already grouped by professor on the page, so a chunk of 4-5 reviews is essentially "what students think of Professor X" — which is exactly what you'd want to retrieve for that query. The only edge case is the tail end of one professor's reviews bleeding into the next, but the signal ratio is still heavily weighted toward the right professor, and the LLM can use the professor's name in each review to attribute opinions correctly.
+For RMP specifically, reviews are already grouped by professor on the page, so a chunk of 2 reviews is essentially "what students think of Professor X" — which is exactly what you'd want to retrieve for that query. The only edge case is the tail end of one professor's reviews bleeding into the next, but the signal ratio is still heavily weighted toward the right professor, and the LLM can use the professor's name in each review to attribute opinions correctly.
 
-For Reddit and Quora sources, posts are already broken into paragraphs or sections by class, topic, or question. Reddit paragraphs tend to be shorter and more concise than typical, closer to 5 sentences and 550 characters, so two paragraphs still fits comfortably within the 1200–1500 character range without needing a separate strategy.
+For Reddit and Quora sources, posts are already broken into paragraphs or sections by class, topic, or question. Reddit paragraphs tend to be shorter and more concise than typical, closer to 5 sentences and 550 characters, so one paragraph fits comfortably within the 700 character range without needing a separate strategy.
 
-A typical paragraph I estimated at around 6 sentences and 650 characters, making two paragraphs roughly 1300 characters. The 200–250 character overlap covers 2–3 sentences, enough to avoid cutting a thought at a boundary without being so long that one class's difficulty bleeds into another's.
+A typical paragraph is estimated at around 6 sentences and 650 characters, so one paragraph fits within a single chunk. The 100 character overlap covers 1–2 sentences, enough to avoid cutting a thought at a boundary without being so long that one class's difficulty bleeds into another's.
+
+**Update (Milestone 5):** Original chunk size was 1200–1500 characters (targeting 2 paragraphs per chunk), producing only 53 total chunks — too few to give the retriever meaningful signal diversity. Reduced to 700 characters (1 paragraph per chunk) with overlap halved proportionally to 100 characters, targeting ~100 chunks. Smaller chunks also embed more precisely against all-MiniLM-L6-v2's 256-token context window, which was silently truncating the tail of every 1400-character chunk.
 
 Known limitation:
-Sources 7 and 8 (USC.edu official course pages) are structured as bulleted lists rather than paragraphs. A single chunk from these sources may contain 15–20 course requirements or course names, each a short bullet. This means the chunk's embedding points in many directions simultaneously, which can hurt retrieval precision for specific course queries. This is a known tradeoff accepted in favor of keeping one consistent chunking strategy for a first project.
+Sources 7 and 8 (USC.edu official course pages) are structured as bulleted lists rather than paragraphs. A single chunk from these sources may contain 8–10 course requirements or course names, each a short bullet. This means the chunk's embedding points in multiple directions simultaneously, which can hurt retrieval precision for specific course queries. This is a known tradeoff accepted in favor of keeping one consistent chunking strategy for a first project.
 
 ---
 
